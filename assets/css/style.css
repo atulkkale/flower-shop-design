@@ -169,7 +169,21 @@ header h1 a {
 
 .cart { 
   display: block;
+  position: relative;
   text-indent: -2000px;
+}
+
+.cart::before {
+  content: "0";
+  padding: 1px 5px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #698467;
+  color: #fff;
+  font-size: 10px;
+  text-indent: 0;
+  border-radius: 100px;
 }
 
 .cart::after {
@@ -177,7 +191,7 @@ header h1 a {
   content: "\f218";
   float: right;
   color: #848484;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: 600;
   text-indent: 0;
   cursor: pointer;
@@ -344,20 +358,32 @@ header nav, header h1, header span { flex-basis: 32%;}
 
 
 /* Flowers section start. */
+.featuredplants {
+  margin-top: 80px;
+  text-align: center;
+}
+
 .flowers h2 {
-  margin: 60px 0 40px 0;
-  font-size: 30px;
+  margin-bottom: 50px;
+  font-size: 35px;
   color: #383838;
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
 }
 
-.flowers ul {
+.flowerscontainer {
+  padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(3, 3fr);
   justify-content: space-between;
-  grid-gap: 20px;
+  grid-row-gap: 40px;
+  grid-column-gap: 30px;
+}
+
+.flowerscontainer li { 
+  position: relative;
+  overflow: hidden;
 }
 
 .flowers li img { width: 100%;}
@@ -379,10 +405,79 @@ header nav, header h1, header span { flex-basis: 32%;}
 }
 
 .price {
-  display: block;
+  margin-bottom: 60px;
   font-size: 25px;
   font-weight: 600;
   text-align: center;
+}
+
+.strikethrough{ 
+  display: inline-block;
+  font-size: 25px;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+.dropdown li { 
+  position: absolute;
+  border-radius: 100px;
+}
+
+.dropdown li:first-child { 
+  left: 30%;
+  bottom: -60px;
+  text-indent: -2000px;
+}
+
+.dropdown li:nth-child(2) { 
+  right: 30%;
+  bottom: -120px;
+  text-indent: -2000px;
+}
+
+.dropdown li a:first-child::after, .dropdown li a:nth-child(2)::after{
+  font-family: "Font Awesome 5 Free";
+  padding: 8px 10px;
+  float: left;
+  font-weight: 800;
+  font-size: 20px;
+  background-color: #000;
+  color: #fff;
+  text-indent: 0;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.dropdown li:first-child a::after { content: "\f002";}
+
+.dropdown li:nth-child(2) a::after { content: "\f217";}
+
+.flowerscontainer li:hover .dropdown li{
+  bottom: 15px;
+  transition: .5s;
+}
+
+.flowerscontainer li:hover {
+  box-shadow: 1px 1px 10px 5px #ccc;
+}
+
+.browseproduct {
+  margin: 40px 0;
+  display: block;
+  color: #698467;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.browseproduct::after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f30b";
+  position: relative;
+  top: 2px;
+  left: 5px;
+  font-weight: 600;
+  color: #698467;
+  font-size: 20px;
 }
 /*=================================
   Main styling end.
