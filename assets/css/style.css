@@ -372,6 +372,28 @@ header nav, header h1, header span { flex-basis: 32%;}
   text-transform: uppercase;
 }
 
+.categories-menu {
+  display: flex;
+  justify-content: center;
+  text-transform: capitalize;
+  font-family: Helvetica;
+}
+
+.categories-menu li {
+  margin: 0 10px 60px 10px;
+}
+
+.categories-menu a {
+  color: #698467;
+  font-size: 14px;
+}
+
+.categories-menu a:hover {
+  transition: .5s;
+  color: #383838;
+  border-bottom: 1px solid #383838;
+}
+
 .flowerscontainer {
   padding: 0 20px;
   display: grid;
