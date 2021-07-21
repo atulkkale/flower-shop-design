@@ -96,6 +96,7 @@ sub { bottom: -.25em; }
 .wrapper a{ text-decoration: none;}
 .wrapper button{ outline: none;}
 .wrapper input{ outline: none;}
+.block { display: block;}
 
 .capitalize{ 
   text-transform: capitalize;
@@ -135,7 +136,7 @@ header .wrapper {
 
 header h1 { text-align: center;}
 
-header h1::before {
+header h1::before, .heading::before {
   content: "O";
   padding: 2px;
   position: relative;
@@ -147,7 +148,7 @@ header h1::before {
   border-radius: 100px;
 }
 
-header h1::after {
+header h1::after, .heading::after {
   content: "O";
   padding: 2px;
   position: relative;
@@ -159,7 +160,7 @@ header h1::after {
   border-radius: 100px;
 }
 
-header h1 a {
+header h1 a, .heading a {
   color: #383838;
   font-size: 25px;
   font-weight: 600;
@@ -357,7 +358,7 @@ header nav, header h1, header span { flex-basis: 32%;}
 }
 
 
-/* Flowers section start. */
+/* Flowers styling start. */
 .featuredplants {
   margin-top: 80px;
   text-align: center;
@@ -484,11 +485,24 @@ header nav, header h1, header span { flex-basis: 32%;}
 }
 
 .browseproduct {
-  margin: 40px 0;
+  width: 300px;
+  padding: 20px;
+  margin: 20px auto 100px auto;
   display: block;
   color: #698467;
   text-transform: uppercase;
   text-align: center;
+}
+
+.browseproduct:hover {
+  transition: .5s;
+  background-color: #698467;
+  color: #fff;
+}
+
+.browseproduct:hover::after {
+  transition: .5s;
+  color: #fff;
 }
 
 .browseproduct::after {
@@ -501,6 +515,277 @@ header nav, header h1, header span { flex-basis: 32%;}
   color: #698467;
   font-size: 20px;
 }
+
+/* Categories styling start. */
+.categories-ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.categories-ul li { 
+  position: relative;
+  overflow: hidden;
+}
+
+.categories-ul li img{
+  width: 100%;
+  height: 100%;
+}
+
+.categories-ul li::before {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #fff;
+  font-size: 1.5rem;
+  opacity: 0;
+  text-align: center;
+}
+
+.categories-ul li::after {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  color: #fff;
+  font-size: 1rem;
+  opacity: 0;
+  text-align: center;
+}
+
+.categories-ul li:first-child::before { content: "AGRICULTURAL GLOBALIZATION";}
+
+.categories-ul li:first-child::after { content: "House Plants";}
+
+.categories-ul li:nth-child(2)::before { content: "MINIMIZE THE RISKS";}
+
+.categories-ul li:nth-child(2)::after { content: "Air plants";}
+
+.categories-ul li:nth-child(3)::before { content: "HEALTH CARE";}
+
+.categories-ul li:nth-child(3)::after { content: "House Plants";}
+
+.categories-ul li:nth-child(4)::before { content: "POTTED PLANTS";}
+
+.categories-ul li:nth-child(4)::after { content: "Office plants";}
+
+.categories-ul li:nth-child(5)::before { content: "DARK SPOTS";}
+
+.categories-ul li:nth-child(5)::after { content: "Plant containers";}
+
+.categories-ul li:nth-child(6)::before { content: "CACTUS ON DESTOP";}
+
+.categories-ul li:nth-child(6)::after { content: "Office Project";}
+
+.categories-ul li:nth-child(7)::before { content: "CORNER WINDOW";}
+
+.categories-ul li:nth-child(7)::after { content: "House Plants, Plant containers";}
+
+.categories-ul li:nth-child(8)::before { content: "VITALITY";}
+
+.categories-ul li:nth-child(8)::after { content: "Office plants";}
+
+.categories-ul li:hover {
+  transition: .5s;
+  background-image: linear-gradient(#698467, #698467);
+}
+
+.categories-ul li:hover img { 
+  transition: .5s;
+  opacity: 0.3;
+  transform: scale(1.2);
+}
+
+.categories-ul li:hover::before {
+  transition: .5s;
+  opacity: 1;
+  top: 30%;
+}
+
+.categories-ul li:hover::after {
+  transition: .8s;
+  opacity: 1;
+  top: 50%;
+  text-decoration: underline;
+}
+
+/* Newsletter styling start. */
+.newsletter { 
+  padding: 70px 0;
+  background-color: #698467;
+  text-align: center;
+}
+
+.newsletter .wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.newsletter-title h2 {
+  color: #fff;
+  font-size: 52px;
+  text-transform: capitalize;
+}
+
+.newsletter-title p { 
+  margin-top: 20px;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.newsletter-title p::first-letter { text-transform: capitalize;}
+
+.newsletter form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter form .form-element:first-child input {
+  width: 300px;
+  padding: 15px 20px;
+  color: #878581;
+  font-size: 16px;
+}
+
+.newsletter form .form-element:nth-child(2) input {
+  height: 51px;
+  border: none;
+  padding: 0 10px;
+  margin-left: 20px;
+  background-color: #383838;
+  color: #fff;  
+  outline: none;
+  text-transform: uppercase;
+}
+
+.newsletter form .form-element:nth-child(2) input:hover {
+  transition: .5s;
+  background-color: #2d2a24;
+}
 /*=================================
   Main styling end.
+=================================*/
+/*=================================
+  Footer styling start.
+=================================*/
+footer {
+  padding: 100px 0;
+}
+
+footer .wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-para, .footer-third-col li:nth-child(2) {
+  margin: 20px 0;
+  color: #878581;
+  font-size: 16px;
+  font-family: "Source Sans Pro",Sans-serif;
+  line-height: 32px;
+}
+
+.footer-para::first-letter { text-transform: uppercase;}
+
+.footer-icons { 
+  display: flex;
+  text-indent: -2000px;
+}
+
+.footer-icons li a::before {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 600;
+  text-indent: 0;
+  float: left;
+  display: block;
+  padding: 5px;
+  margin-right: 10px;
+  background-color: #2d2a24;
+  color: #fff;
+  border-radius: 100px;
+}
+
+.footer-icons li a:hover::before {
+  transition: .5s;
+  background-color: #698467;
+}
+
+.footer-icons li:first-child a::before { 
+  content: "\f39e";
+  padding: 8px 12px;
+}
+
+.footer-icons li:nth-child(2) a::before { 
+  content: "\f099";
+  padding: 8px 9px;
+}
+
+.footer-icons li:nth-child(3) a::before { 
+  content: "\f16d";
+  padding: 8px 9px;
+}
+
+.footer-sec-col li:first-child, .footer-third-col li:first-child, .footer-four-col li:first-child {
+  color: #2d2a24;
+  font-size: 18px;
+  font-family: "Cormorant", -apple-system, BlinkMacSystemFont, Sans-serif;
+  text-transform: uppercase;
+}
+
+.footer-sec-col li:nth-child(2), .footer-sec-col li:nth-child(3), .footer-sec-col li:nth-child(4) {
+  color: #878581;
+  font-size: 16px;
+  font-family: "Source Sans Pro",Sans-serif;
+  line-height: 32px;
+}
+
+.footer-sec-col li:nth-child(2) { 
+  padding-left: 20px;
+  margin-top: 28px;
+  text-transform: capitalize;
+}
+
+.footer-sec-col li:nth-child(3) { 
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.footer-sec-col li:nth-child(4) { padding-left: 15px;}
+
+.footer-sec-col li .block { text-transform: uppercase;}
+
+.footer-sec-col li:nth-child(2)::before, .footer-sec-col li:nth-child(3)::before, .footer-sec-col li:nth-child(4)::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 600;
+  margin: 0 10px 0 -20px;
+}
+
+.footer-sec-col li:nth-child(2)::before { content: "\f3c5";}
+
+.footer-sec-col li:nth-child(3)::before { content: "\f3cd";}
+
+.footer-sec-col li:nth-child(4)::before { content: "\f0e0";}
+
+.footer-third-col li:nth-child(2)::first-letter { text-transform: uppercase;}
+
+.footer-four-col li:first-child { margin-bottom: 27px;}
+
+.footer-four-col li a {
+  margin-bottom: 20px;
+  display: block;
+  color: #878581;
+  font-size: 16px;
+  font-family: "Source Sans Pro",Sans-serif;
+  text-transform: capitalize;
+}
+
+.footer-four-col li a:hover {
+  transition: .5s;
+  color: #698467;
+}
+/*=================================
+  Footer styling end.
 =================================*/
