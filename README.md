@@ -1,10 +1,10 @@
-# Node.js Project Frontend Design
+# Flower Shop - Static Frontend Design
 
-This repository contains the **frontend static design** created for a planned Node.js project. The design was developed using only HTML and CSS and intended as the front end for a new project. Although this design was never integrated into the Node.js project, it reflects extensive research and combines elements from various web designs.
+This repository contains the **static frontend design** created for a Node.js project called **Flower Shop**. The design was developed using only HTML and CSS to provide a responsive, visually appealing front end for the planned Node.js application. Although this design was ultimately not integrated into the Node.js project, it reflects extensive research and incorporates elements from multiple web designs.
 
 ## Project Overview
 
-The goal of this project was to develop a polished and visually appealing frontend layout for a Node.js application. The design was created independently, drawing inspiration from multiple web pages to craft a unique, cohesive layout. This static design is ready for use as a foundation for any similar project.
+The goal of this project was to develop a polished and functional frontend layout for the **Flower Shop** Node.js application. The design was created independently, combining inspiration from various sources to fit the floral shop theme, while ensuring adaptability and ease of use.
 
 ## Technologies Used
 
